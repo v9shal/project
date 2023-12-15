@@ -61,15 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const item = event.target;
         if (item) {
             todoList.removeChild(item);
-            removeSavedData(item.textContent.trim()); 
+           
         }
     }
 
-    function removeSavedData(taskText) {
-        const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        const updatedTasks = savedTasks.filter(task => task !== taskText);
-        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-    }
+   
   
     todoList.addEventListener('dblclick', removeTaskAndData);
      
